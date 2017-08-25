@@ -1,0 +1,22 @@
+.margin(@num) {
+  @px: px;
+  .margin-@{num}{
+    margin: unit(@num, @px);
+  }
+  .margin-left-@{num}{
+    margin-left: unit(@num, @px);
+  }
+  .margin-right-@{num}{
+    margin-right: unit(@num, @px);
+  }
+  .margin-top-@{num}{
+    margin-top: unit(@num, @px);
+  }
+  .margin-bottom-@{num}{
+    margin-bottom: unit(@num, @px);
+  }
+}
+.margin(5);
+.margin(10);
+.margin(15);
+.margin(20); 

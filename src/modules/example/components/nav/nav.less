@@ -1,0 +1,31 @@
+// @import '../../../../components/style/var.less';
+@import '~components/style/var.less';
+.nav{
+  position: fixed;
+  z-index: 2;
+  height: 50px;
+  left: 0;
+  top: 0;
+  background: black;
+  width:100%;
+  display: flex;
+  align-items:center;
+  .logo{
+    color: @color-orange;
+  }
+}
+.nav-link-list {
+  &>a {
+    text-decoration: none;
+    padding: 0 5px;
+    border-bottom: 1px solid #eeeeee;
+    height: 40px;
+    color: #333333;
+    .iconfont {
+      float: right;
+    }
+    &:active{
+      background: @color-border;
+    }
+  }
+}

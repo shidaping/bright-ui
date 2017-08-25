@@ -1,0 +1,37 @@
+@import '~components/style/var.less';
+.modal {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  min-width: 460px;
+  left: 50%;
+  top: 50%;
+  background: white;
+  border-radius: 5px;
+  padding: 10px;
+
+  .modal__head {
+    border-bottom: 1px solid @color-border;
+    line-height: 40px;
+    .btn-close {
+      line-height: 40px;
+      text-align: right;
+      width: 40px;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      color: @color-grey;
+      &:hover{
+        color: @color-body;
+      }
+    }
+  }
+  .modal__body{
+    padding: 10px 0;
+    min-height: 300px;
+    overflow-y: auto;
+  }
+  .modal__foot{
+    border-top: 1px solid @color-border;
+    padding-top: 10px;
+  }
+}

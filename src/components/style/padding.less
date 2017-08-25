@@ -1,0 +1,22 @@
+.padding(@num) {
+  @px: px;
+  .padding-@{num}{
+    padding: unit(@num, @px);
+  }
+  .padding-left-@{num}{
+    padding-left: unit(@num, @px);
+  }
+  .padding-right-@{num}{
+    padding-right: unit(@num, @px);
+  }
+  .padding-top-@{num}{
+    padding-top: unit(@num, @px);
+  }
+  .padding-bottom-@{num}{
+    padding-bottom: unit(@num, @px);
+  }
+}
+.padding(5);
+.padding(10);
+.padding(15);
+.padding(20); 

@@ -1,0 +1,44 @@
+@import '~components/style/var.less';
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  td {
+    padding: 10px;
+  }
+  thead {
+    background: @color-grey-bg;
+    font-weight: bold;
+    font-weight: 18px;
+  }
+}
+
+.table-hover {
+  tbody {
+    tr:hover {
+      background-color: #dddddd !important;
+    }
+  }
+}
+
+.table-striped {
+  tbody {
+    tr:nth-child(2n) {
+      background-color: lighten(@color-green, 55%);
+    }
+  }
+}
+
+.table-border {
+  border: 1px solid @color-grey;
+  td {
+    border: 1px solid @color-grey;
+  }
+}
+
+.table-line{
+  tbody{
+    tr{
+      border-bottom: 1px solid @color-border;
+    }
+  }
+}

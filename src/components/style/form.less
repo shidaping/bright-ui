@@ -1,0 +1,64 @@
+@import './var.less';
+.form-control {
+  display: inline-block;
+}
+
+label.form-control{
+  text-align: right;
+  line-height: 32px;
+  padding-right: 5px;
+  font-weight: bold;
+}
+input.form-control {
+  line-height: 30px;
+  border: 1px solid @color-input-border;
+  padding: 0 5px;
+  border-radius: 3px;
+  &:focus {
+    border: 1px solid @color-primary;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px lighten(@color-primary, 20%);
+  }
+}
+
+input.form-control.with-addon-left {
+  padding-left: 19px;
+  .addon-left {
+    border-right: 1px solid @color-input-border;
+    background: #eeeeee;
+  }
+}
+
+.form-group-with-addon-left {
+  position: relative;
+  input.form-control {
+    padding-left: 2.1px;
+  }
+  .addon-left {
+    position: absolute;
+    top: 50%;
+    left: .5px;
+    transform: translateY(-50%);
+  }
+}
+
+.form-group-with-addon-right {
+  position: relative;
+  input.form-control {
+    padding-right: 21px
+  }
+  .addon-right {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+  }
+}
+
+.form-control-with-addon-left {
+  position: relative;
+}
+
+select.form-control {
+  padding: 12px 5px;
+  font-size: 12px;
+}

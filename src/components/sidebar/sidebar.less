@@ -1,0 +1,62 @@
+@import '~components/style/var.less';
+.sidebar {
+  background: #eeeeee;
+  .sidebar-item {
+    color: @color-green;
+    line-height: 30px;
+
+    &.level-1 {
+      &>.content {
+        padding: 0 10px;
+      }
+    }
+    &.level-2 {
+      &>.content {
+        padding: 0 10px 0 20px;
+      }
+    }
+    &.level-3 {
+      &>.content {
+        padding: 0 10px 0 40px;
+      }
+    }
+    &>.content {
+      display: block;
+      &:hover {
+        background-color: #dddddd;
+      }
+      &.active {
+        background-color: @color-green;
+        color:white;
+      }
+      text-decoration: none;
+      color: @color-green;
+      cursor: pointer;
+      .triangle {
+        // boder-left: 20px;
+        // border-right: 20px;
+        // height: 20px;
+        // border-top:20px;
+        // border-color: grey;
+        // display: inline-block;
+        // float: right;
+        // height: 20px;
+        // width: 20px;
+        display: inline-block;        
+        border-top: 8px solid @color-green;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        width: 8px;
+        height: 8px;
+        position: relative;
+        top: 11px;
+        transform-origin: 50% 50%;
+        transition: all 0.2s ease;
+        float:right;
+        &.active {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+}

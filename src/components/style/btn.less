@@ -1,0 +1,63 @@
+@import 'var.less';
+.btn {
+  line-height: 28px;
+  padding: 0 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn-full{
+  display: block;
+  width: 100%;
+}
+.btn:disabled {
+  opacity: 0.4;
+}
+
+.btn-red {
+  background-color: @color-red;
+  color: white;
+  border: 1px solid @color-red;
+  &:active {
+    background-color: lighten(@color-red, 10%);
+  }
+}
+
+.btn-red--reverse {
+  background-color: white;
+  color: @color-red;
+  border: 1px solid @color-red;
+}
+.btn(@name, @color) {
+  .btn-@{name} {
+    background: @color;
+    color: white;
+    border: 1px solid @color;
+  }
+  .btn-@{name}:hover {
+    background: darken(@color, 10%);
+    border: 1px solid darken(@color, 10%);
+  }
+  .btn-@{name}[disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: @color;
+  }
+  .btn-@{name}--reversed {
+    background: white;
+    color: @color;
+    border: 1px solid @color;
+  }
+  .btn-@{name}--reversed:hover {
+    background: @color;
+    color: white;
+    border: 1px solid @color;
+  }
+}
+.btn(red, @color-red);
+.btn(orange, @color-orange);
+.btn(green, @color-green);
+.btn(blue, @color-blue);
+.btn(yellow, @color-yellow);
+.btn-grey{
+  color: #333333;
+}
