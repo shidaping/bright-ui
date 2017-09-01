@@ -1,0 +1,36 @@
+@import '~components/style/var.less';
+.pagination {
+  .btn-list {
+    border: 1px solid lighten(@color-blue, 20%);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    border-radius: 3px;
+    button {
+      background: white;
+      border: none;
+      border-left: 1px solid lighten(@color-blue, 20%);
+      line-height: 32px;
+      float:left;
+      display: inline-block;
+      min-width: 50px;
+      font-size: 12px;
+      text-align: center;
+      color: @color-blue;
+      cursor: pointer;
+      &:hover{
+        color: darken(@color-blue, 10%);
+      }
+    }
+    button[disabled] {
+        color: #cccccc;
+        cursor: not-allowed;
+      }
+    button:first-child{
+      border-left:none;
+    }
+  }
+  input {
+    width: 50px;
+  }
+}

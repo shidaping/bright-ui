@@ -11,6 +11,15 @@ class PageForm extends React.Component {
     super(props);
     this.state = {
       boolShowPassword: false,
+      optionListEducation: [
+        '小学',
+        '初中',
+        '高中',
+        '专科',
+        '本科',
+        '硕士',
+        '博士',
+      ],
     };
   }
   componentDidMount() {
@@ -25,6 +34,25 @@ class PageForm extends React.Component {
             <div className="col-4 clearfix">
               <label className="form-control col-3">姓名</label>
               <input className="form-control col-9" placeholder="请输入" />
+            </div>
+            <div className="col-4 clearfix">
+              <label className="form-control col-3">手机</label>
+              <input className="form-control col-9" placeholder="请输入" />
+            </div>
+            <div className="col-4 clearfix">
+              <label className="form-control col-3">邮箱</label>
+              <input className="form-control col-9" placeholder="请输入" />
+            </div>
+          </div>
+          <h1 className="h1">select</h1>
+          <div className="clearfix">
+            <div className="col-4 clearfix">
+              <label className="form-control col-3">学历</label>
+              <select className="form-control col-9">
+                {this.state.optionListEducation.map((item, i) => (
+                  <option key={i}>{item}</option>
+                ))}
+              </select>
             </div>
             <div className="col-4 clearfix">
               <label className="form-control col-3">手机</label>

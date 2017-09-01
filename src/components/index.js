@@ -4,6 +4,7 @@ import Loading from './loading';
 import Alert from './alert';
 import Sidebar from './sidebar';
 import Modal from './modal';
+import Pagination from './pagination';
 
 export { Blank, Toast, Loading, Alert, Sidebar, Modal };
 export default {
@@ -12,4 +13,5 @@ export default {
   Loading,
   Sidebar,
   Modal,
+  Pagination,
 };

@@ -58,6 +58,15 @@ class Modal extends Component {
               className="btn btn-blue pull-right"
               onClick={this.props.onOk}
             >确定</button>
+            <button
+              className="btn btn-grey pull-right margin-right-10"
+              onClick={() => {
+                if (typeof this.props.onCancel === 'function') {
+                  this.props.onCancel();
+                }
+                this.apiHide();
+              }}
+            >{this.props.textCancel}</button>
           </div>
         </div>
       </div>
@@ -69,9 +78,13 @@ Modal.propTypes = {
   api: PropTypes.func,
   show: PropTypes.bool,
   onOk: PropTypes.func,
+  onCancel: PropTypes.func,
   title: PropTypes.string,
+  textOk: PropTypes.string,
+  textCancel: PropTypes.string,
 };
-// Toast.defaultProps = {
-//   timeout: 3000,
-// };
+Modal.defaultProps = {
+  textOk: '确定',
+  textCancel: '取消',
+};
 export default Modal;

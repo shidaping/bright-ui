@@ -23,7 +23,7 @@ class PageModal extends React.Component {
             this.apiModal.apiShow();
           }}
         >
-          show toast
+          show modal
         </button>
         <Modal
           api={(api) => {
@@ -31,7 +31,7 @@ class PageModal extends React.Component {
           }}
           title="my modal title"
         >
-          asdfasdf
+          body
         </Modal>
       </div>
     );
