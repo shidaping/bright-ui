@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import 'components/style/btn.less';
 import 'components/style/form.less';
 class Pagination extends Component {
@@ -86,7 +85,7 @@ class Pagination extends Component {
           >末页</button>
         </span>
         当前第{this.state.current}页(共{this.state.total}页)&nbsp;
-        跳至第<input className="form-control" value={this.state.formData.goTo} onChange={this.handleValueChange('goTo', 'formData')} />页&nbsp;
+        跳至第<input className="form-control" value={this.state.formData.goTo} onChange={this.handleValueChange('goTo', 'formData')} type="number" />页&nbsp;
         <button className="btn btn-blue margin-left-10" onClick={this.jump}>跳转</button>
       </div>
     );
