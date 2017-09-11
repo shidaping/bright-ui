@@ -12,8 +12,8 @@ var webackConfig = {
     'css/loading': './src/components/loading/loading.less',
     'css/switch': './src/components/switch/switch.less',
     'css/sidebar': './src/components/sidebar/sidebar.less',
-    modal: './src/components/modal/modal.less',
-    pagination: './src/components/pagination/pagination.less',
+    'css/modal': './src/components/modal/modal.less',
+    'css/pagination': './src/components/pagination/pagination.less',
   },
   output: {
     path: './dist',

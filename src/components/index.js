@@ -6,7 +6,7 @@ import Sidebar from './sidebar';
 import Modal from './modal';
 import Pagination from './pagination';
 
-export { Blank, Toast, Loading, Alert, Sidebar, Modal };
+export { Blank, Toast, Loading, Alert, Sidebar, Modal, Pagination };
 export default {
   Blank,
   Toast,
