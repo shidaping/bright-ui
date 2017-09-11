@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import 'components/style/btn.less';
-import 'components/style/form.less';
+
 class Pagination extends Component {
   constructor(props) {
     super(props);
