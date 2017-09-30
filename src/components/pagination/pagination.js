@@ -7,6 +7,7 @@ class Pagination extends Component {
     this.state = {
       current: props.current,
       total: props.total,
+      count: props.count || 0,
       formData: {
         goTo: '',
       },
@@ -16,10 +17,11 @@ class Pagination extends Component {
     this.jump = this.jump.bind(this);
   }
   componentWillReceiveProps(nextProps) {
-    if (nextProps.current !== this.state.current || nextProps.total !== nextProps.total) {
+    if (nextProps.current !== this.state.current || nextProps.total !== this.state.total || nextProps.count !== this.state.count) {
       this.setState({
         current: nextProps.current,
         total: nextProps.total,
+        count: nextProps.count,
       });
     }
   }
@@ -94,6 +96,7 @@ class Pagination extends Component {
 Pagination.propTypes = {
   current: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
+  count: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
   onError: PropTypes.func,
 };

@@ -8,6 +8,7 @@ var webackConfig = {
   entry: {
     example: ['./src/modules/example/index.js'],
   },
+  devtool: 'souremap',
   output: {
     path: path.resolve(__dirname, 'assets'),
     filename: '[name].js',

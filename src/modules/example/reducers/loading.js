@@ -8,7 +8,7 @@ const initialState = {
 export default function update(state = initialState, action) {
   switch (action.type) {
     case SHOW_LOADING:
-      return { boolShow: true, children: action.opt.children };
+      return { boolShow: true, children: action.opt ? action.opt.children : null };
     case HIDE_LOADING:
       return { boolShow: false };
     default:

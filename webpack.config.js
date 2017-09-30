@@ -15,8 +15,9 @@ var webackConfig = {
     'css/modal': './src/components/modal/modal.less',
     'css/pagination': './src/components/pagination/pagination.less',
   },
+  devtool: 'souremap',
   output: {
-    path: './dist',
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     // chunkFilename: "[id].js"
   },
@@ -32,16 +33,11 @@ var webackConfig = {
       // client: path.resolve('./client'),
       config: path.resolve('config'),
     },
-    modulesDirectories: [
+    modules: [
       'node_modules',
       'src',
     ],
-    extensions: ['', '.js', '.jsx', '.less'],
-    root: [
-      // path.resolve('./client'),
-      // path.resolve('./node_modules'),
-      // path.resolve(__dirname, './src'),
-    ],
+    extensions: ['.js', '.jsx', '.less'],
   },
   plugins: [
     // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
@@ -52,7 +48,6 @@ var webackConfig = {
     ),
   ],
   module: {
-    noParse: ['./src/noparse/*'],
     loaders: [{
       // test: /\.js$/,
       // loaders: ['babel'],
@@ -65,11 +60,11 @@ var webackConfig = {
     //   test: /\.css$/,
     //   loader: 'style!css'
     // }, {
-      test: /\.less$/,
-      loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!less'),
-    }, {
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
+      test: /(\.less|\.css)$/,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: ['css-loader', 'autoprefixer-loader', 'postcss-loader', 'less-loader'],
+      }),
     }, {
       test: /\.jpg|\.png$/,
       loader: 'file-loader',
