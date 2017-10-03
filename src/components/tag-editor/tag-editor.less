@@ -1,0 +1,35 @@
+@import '~components/style/var.less';
+.bui-tag-editor{
+  border: 1px solid @color-input-border;
+  border-radius: 3px;
+  &.focus{
+    border: 1px solid @color-primary;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px lighten(@color-primary, 20%);
+  }
+  .tag{
+    background: @color-green;
+    line-height: 26px;
+    margin-top: 3px;
+    margin-left: 5px;
+    border-radius: 5px;
+    padding: 0 5px;
+    color: white;
+    button{
+      -webkit-apperance: none;
+      border: none;
+      margin-left: 5px;
+      color: @color-red;
+      background: transparent;
+      cursor: pointer;
+      font-size: 12px;
+      &:hover{
+        color: darken(@color-red, 5%);
+      }
+    }
+  }
+  input{
+    border: none;
+    line-height: 32px;
+    margin-left: 5px; 
+  }
+}

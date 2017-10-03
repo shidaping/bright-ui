@@ -30,6 +30,15 @@ input.form-control {
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px lighten(@color-primary, 20%);
   }
 }
+textarea.form-control{
+  border: 1px solid @color-input-border;
+  padding: 8px 5px;
+  border-radius: 3px;
+  &:focus {
+    border: 1px solid @color-primary;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px lighten(@color-primary, 20%);
+  }
+}
 
 input.form-control.with-addon-left {
   padding-left: 19px;
@@ -38,6 +47,7 @@ input.form-control.with-addon-left {
     background: #eeeeee;
   }
 }
+
 
 .form-group-with-addon-left {
   position: relative;

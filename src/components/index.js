@@ -5,8 +5,9 @@ import Alert from './alert';
 import Sidebar from './sidebar';
 import Modal from './modal';
 import Pagination from './pagination';
+import TagEditor from './tag-editor'
 
-export { Blank, Toast, Loading, Alert, Sidebar, Modal, Pagination };
+export { Blank, Toast, Loading, Alert, Sidebar, Modal, Pagination, TagEditor };
 export default {
   Blank,
   Toast,
@@ -14,4 +15,5 @@ export default {
   Sidebar,
   Modal,
   Pagination,
+  TagEditor,
 };
