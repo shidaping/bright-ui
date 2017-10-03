@@ -14,6 +14,7 @@ var webackConfig = {
     'css/sidebar': './src/components/sidebar/sidebar.less',
     'css/modal': './src/components/modal/modal.less',
     'css/pagination': './src/components/pagination/pagination.less',
+    'css/tag-editor': './src/components/tag-editor/tag-editor.less',
   },
   devtool: 'souremap',
   output: {
