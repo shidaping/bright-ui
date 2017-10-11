@@ -2,6 +2,7 @@
 .bui-tag-editor{
   border: 1px solid @color-input-border;
   border-radius: 3px;
+  padding-bottom: 3px;
   &.focus{
     border: 1px solid @color-primary;
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px lighten(@color-primary, 20%);
@@ -29,7 +30,12 @@
   }
   input{
     border: none;
-    line-height: 32px;
+    line-height: 24px;
     margin-left: 5px; 
+    margin-top: 4px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px dashed @color-green;
+    padding: 0 5px;
   }
 }

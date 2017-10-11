@@ -21,52 +21,51 @@ class TagEditor extends Component {
     // }
     if (!_.isEqual(nextProps.value, this.state.value)) {
       this.setState({
-        value: nextProps.value
+        value: nextProps.value,
       });
     }
   }
-  handleChange(e){
+  handleChange(e) {
     this.setState({
       input: e.target.value,
-    })
+    });
   }
   render() {
     return (
       <div
         className={classnames(`clearfix bui-tag-editor ${this.props.className}`, {
-          focus: this.state.boolFocus
+          focus: this.state.boolFocus,
         })}
       >
-        {this.state.value.map((item,i) => (
+        {this.state.value.map((item, i) => (
           <span className="tag pull-left" key={i}>
             {item}
             <button
-              onClick={(item) => {
+              onClick={() => {
                 let value = this.state.value;
                 value.splice(i, 1);
                 this.setState({
                   value,
                 });
               }}
-              >
+            >
               x
             </button>
           </span>
         ))}
-        
         <input
           onFocus={() => {
             this.setState({
               boolFocus: true,
-            })
+            });
           }}
           onBlur={() => {
             this.setState({
               boolFocus: false,
-            })
+            });
           }}
           onKeyDown={(e) => {
-            if (e.keyCode === 13 || e.keyCode === 32 && !!this.state.input.trim()) {
+            if ((e.keyCode === 13 || e.keyCode === 32) && !!this.state.input.trim()) {
               let value = this.state.value;
               value.push(this.state.input.trim());
               this.setState({
@@ -86,18 +85,18 @@ class TagEditor extends Component {
           value={this.state.input}
           onChange={this.handleChange}
           placeholder={this.props.placeholder || '输入标签'}
-          className="pull-left"  
+          className="pull-left"
         />
       </div>
     );
   }
 }
-// Toast.propTypes = {
-//   children: PropTypes.any,
-//   api: PropTypes.func,
-//   timeout: PropTypes.number,
-//   show: PropTypes.bool,
-// };
+TagEditor.propTypes = {
+  placeholder: PropTypes.any,
+  // api: PropTypes.func,
+  // timeout: PropTypes.number,
+  // show: PropTypes.bool,
+};
 // Toast.defaultProps = {
 //   timeout: 3000,
 // };

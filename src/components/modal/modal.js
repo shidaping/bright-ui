@@ -38,7 +38,7 @@ class Modal extends Component {
   render() {
     return (
       <div
-        className={classnames('mask-black', {
+        className={classnames(`${this.props.className} mask-black`, {
           hide: !this.state.show,
         })}
       >
@@ -82,6 +82,7 @@ Modal.propTypes = {
   title: PropTypes.string,
   textOk: PropTypes.string,
   textCancel: PropTypes.string,
+  className: PropTypes.any,
 };
 Modal.defaultProps = {
   textOk: '确定',
