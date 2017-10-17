@@ -1,11 +1,12 @@
+@import '~components/style/var.less';
 .bui-switch {
   -webkit-appearance: none;
   position: relative;
-  width: 5.3px;
-  height: 3.1px;
+  width: 53px;
+  height: 31px;
   border: 1px solid #e3e3e3;
   outline: 0;
-  border-radius: 1.6px;
+  border-radius: 16px;
   box-sizing: border-box;
   background: #dfdfdf;
   &:before {
@@ -18,23 +19,23 @@
     position: absolute;
     top: 0;
     left: 1px;
-    height: 2.85px;
-    border-radius: 1.5px;
+    height: 28.5px;
+    border-radius: 15px;
     transition: transform .3s;
   }
   &:after {
-    width: 2.9px;
+    width: 29px;
     background-color: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
   }
   &:checked {
-    border-color: #04be02;
-    background-color: #04be02;
+    border-color: @color-green;
+    background-color: @color-green;
     &:before {
       transform: scale(0);
     }
     &:after {
-      transform: translateX(2.2px);
+      transform: translateX(22px);
     }
   }
 }

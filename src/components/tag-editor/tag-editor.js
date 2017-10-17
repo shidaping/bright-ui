@@ -72,6 +72,11 @@ class TagEditor extends Component {
                 value,
                 input: '',
               });
+              this.props.onChange({
+                target: {
+                  value: value,
+                },
+              });
             }
             if (e.keyCode === 8 && !this.state.input) {
               let value = this.state.value;
@@ -79,6 +84,11 @@ class TagEditor extends Component {
               this.setState({
                 value,
                 input: '',
+              });
+              this.props.onChange({
+                target: {
+                  value: value,
+                },
               });
             }
           }}
@@ -96,6 +106,7 @@ TagEditor.propTypes = {
   // api: PropTypes.func,
   // timeout: PropTypes.number,
   // show: PropTypes.bool,
+  onChange: PropTypes.func,
 };
 // Toast.defaultProps = {
 //   timeout: 3000,

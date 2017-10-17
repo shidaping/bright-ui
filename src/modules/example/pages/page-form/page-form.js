@@ -4,6 +4,7 @@ import React from 'react';
 // import { showLoading, hideLoading } from 'modules/example/actions/loading';
 // import { actionAjaxGetNewsList } from '../../actions/news.js';
 import TagEditor from 'components/tag-editor';
+import Switch from 'components/switch';
 import classnames from 'classnames';
 import 'components/style/form.less';
 import 'components/tag-editor/tag-editor.less';
@@ -64,7 +65,7 @@ class PageForm extends React.Component {
               <label className="form-control col-12">描述</label>
             </div>
             <div className="pull-left" style={{ width: '91.6666%' }}>
-              <textarea className="form-control col-12" rows="3" placeholder="请填写描述写内容"/>
+              <textarea className="form-control col-12" rows="3" placeholder="请填写描述内容" />
             </div>
           </div>
           <h1 className="h1">标签编辑器</h1>
@@ -73,7 +74,16 @@ class PageForm extends React.Component {
               <label className="form-control col-12">标签</label>
             </div>
             <div className="pull-left" style={{ width: '91.6666%' }}>
-              <TagEditor placeholder="请填写描述写内容"/>
+              <TagEditor placeholder="请填写标签内容" onChange={(e) => console.log(e.target.value)} />
+            </div>
+          </div>
+          <h1 className="h1">开关</h1>
+          <div className="clearfix">
+            <div className="pull-left" style={{ width: '8.3333%' }}>
+              <label className="form-control col-12">自动更新</label>
+            </div>
+            <div className="pull-left" style={{ width: '91.6666%' }}>
+              <Switch value={!!true} onChange={(e) => console.log(e.target.value)} />
             </div>
           </div>
 
