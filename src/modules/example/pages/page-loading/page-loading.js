@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { showLoading, hideLoading } from 'modules/example/actions/loading';
+import Loading from '../../../../components/loading/loading';
 // import { actionAjaxGetNewsList } from '../../actions/news.js';
 
 class PageLoading extends React.Component {
@@ -28,6 +29,18 @@ class PageLoading extends React.Component {
             }}
           >
             show loading
+          </button>
+          <button
+            className="btn btn-orange"
+            style={{ marginLeft: 10 }}
+            onClick={() => {
+              Loading.show();
+              setTimeout(() => {
+                Loading.hide();
+              }, 2000);
+            }}
+          >
+            show static loading
           </button>
         </div>
       </div>

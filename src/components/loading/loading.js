@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
 
 class Loading extends Component {
   constructor(props) {
@@ -14,6 +15,32 @@ class Loading extends Component {
         apiShow: this.apiShow,
         apiHide: this.apiHide,
       });
+    }
+  }
+  static show(children) {
+    let dom = document.getElementById('buiLoading');
+    if (dom) {
+      document.body.removeChild(dom);
+    }
+    dom = document.createElement('div');
+    dom.id = 'buiLoading';
+    document.body.appendChild(dom);
+    let apiLoading;
+    ReactDOM.render(
+      <Loading
+        api={(api) => {
+          apiLoading = api;
+        }}
+      >
+        {children}
+      </Loading>,
+      dom);
+    apiLoading.apiShow(children);
+  }
+  static hide() {
+    let dom = document.getElementById('buiLoading');
+    if (dom) {
+      dom.parentElement.removeChild(dom);
     }
   }
   componentWillReceiveProps(nextProps) {

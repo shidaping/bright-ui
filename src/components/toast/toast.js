@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
+
 class Toast extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +28,32 @@ class Toast extends Component {
       this.setState({
         show: nextProps.show,
       });
+    }
+  }
+  static show(children) {
+    let dom = document.getElementById('buiToast');
+    if (dom) {
+      document.body.removeChild(dom);
+    }
+    dom = document.createElement('div');
+    dom.id = 'buiToast';
+    document.body.appendChild(dom);
+    let apiToast;
+    ReactDOM.render(
+      <Toast
+        api={(api) => {
+          apiToast = api;
+        }}
+      >
+        {children}
+      </Toast>,
+      dom);
+    apiToast.apiShow(children);
+  }
+  static hide() {
+    let dom = document.getElementById('bmuiLoading');
+    if (dom) {
+      dom.parentElement.removeChild(dom);
     }
   }
   apiHide() {

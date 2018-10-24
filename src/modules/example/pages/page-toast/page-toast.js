@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { showToast } from 'modules/example/actions/toast.js';
 // import { actionAjaxGetNewsList } from '../../actions/news.js';
 import 'components/style/btn.less';
+import Toast from '../../../../components/toast/toast';
 
 class PageToast extends React.Component {
   constructor(props){
@@ -22,6 +23,15 @@ class PageToast extends React.Component {
             this.props.showToast({
               children: 'hello, world',
             });
+          }}
+        >
+          show toast
+        </button>
+        <button
+          className="btn btn-orange"
+          style={{ marginLeft: 10 }}
+          onClick={() => {
+            Toast.show('asdf');
           }}
         >
           show toast
