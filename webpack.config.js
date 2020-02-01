@@ -23,11 +23,14 @@ var webackConfig = {
     // chunkFilename: "[id].js"
   },
 
-  // externals: {
+  externals: {
   // require('jquery') is external and available
   //  on the global var jQuery
-  //   'jquery': 'jQuery'
-  // },
+    react: 'react',
+    'react-dom': 'react-dom',
+    lodash: 'lodash',
+    moment: 'moment',
+  },
   resolve: {
     alias: {
       'font-awesome.css': path.resolve(nodeModulesDir, 'font-awesome/css/font-awesome.min.css'),
